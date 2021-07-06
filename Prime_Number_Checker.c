@@ -2,16 +2,29 @@
 
 int main()
 {
-    int n;
-    printf("Enter a Number: ");
-    scanf("%d", &n);
+    int a;
+    printf("Enter the number: ");
+    scanf("%d", &a);
 
-    if (n % 2 == 0)
+    if (a == 1)
     {
-        printf("Number %d is Not a PRIME number.", n);
+        printf("Number %d is neither prime nor composite number", a);
+        return 0;
     }
-    else
+    else if (a == 0)
     {
-        printf("Number %d is a PRIME number.", n);
+        printf("Number %d is a composite number", a);
+        return 0;
     }
+
+    for (int i = 2; i * i <= a; i++)
+    {
+        if (a % i == 0)
+        {
+            printf("Number %d is composite number", a);
+            return 0;
+        }
+    }
+
+    printf("Number %d is a prime number", a);
 }
